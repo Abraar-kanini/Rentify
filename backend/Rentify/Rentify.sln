@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rentify", "Rentify.csproj", "{E82EB474-4A96-466C-9B76-B451C9FF1846}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E82EB474-4A96-466C-9B76-B451C9FF1846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82EB474-4A96-466C-9B76-B451C9FF1846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82EB474-4A96-466C-9B76-B451C9FF1846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82EB474-4A96-466C-9B76-B451C9FF1846}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A5B4F90-19E0-4BA6-8BD7-C17DF8482E6D}
+	EndGlobalSection
+EndGlobal

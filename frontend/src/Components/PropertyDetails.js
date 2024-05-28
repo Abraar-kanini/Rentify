@@ -13,7 +13,7 @@ function PropertyDetails() {
     const fetchPropertyDetails = async () => {
       try {
         let response = await fetch(
-          `https://localhost:7218/api/Property/PropertyId/${PropertyId}`,
+          `https://rentifyappservice.azurewebsites.net/api/Property/PropertyId/${PropertyId}`,
           {
             method: "GET",
             headers: {
@@ -43,7 +43,7 @@ function PropertyDetails() {
 
     try {
       let response = await fetch(
-        "https://localhost:7218/api/Property/IM INTRESTED",
+        "https://rentifyappservice.azurewebsites.net/api/Property/IM INTRESTED",
         {
           method: "POST",
           headers: {

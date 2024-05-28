@@ -18,7 +18,7 @@ function UserLogin() {
   const onSubmit = async (data) => {
     try {
       // Send login request to the server
-      let response = await fetch('https://localhost:7218/api/User/Login', {
+      let response = await fetch('https://rentifyappservice.azurewebsites.net/api/User/Login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

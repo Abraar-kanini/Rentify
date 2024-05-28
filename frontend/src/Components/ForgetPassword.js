@@ -26,7 +26,7 @@ function ForgotPassword() {
         event.preventDefault();
         try {
             // Send request to server to send token
-            let response = await fetch(`https://localhost:7218/api/User/ForgetPassword?email=${email}`, {
+            let response = await fetch(`https://rentifyappservice.azurewebsites.net/api/User/ForgetPassword?email=${email}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

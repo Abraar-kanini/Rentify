@@ -13,7 +13,7 @@ function SellerProperty() {
     if (userId) {
       const getSellerProperty = async () => {
         try {
-          let response = await fetch(`https://localhost:7218/api/Property/${userId}`, {
+          let response = await fetch(`https://rentifyappservice.azurewebsites.net/api/Property/${userId}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function SellerProperty() {
   const deleteProperty = async (event, id) => {
     event.preventDefault();
 
-    let response = await fetch(`https://localhost:7218/api/Property/${id}`, {
+    let response = await fetch(`https://rentifyappservice.azurewebsites.net/api/Property/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'

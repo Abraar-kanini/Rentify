@@ -10,11 +10,12 @@ function LandingPage() {
   const fetchNatureImages = async () => {
     try {
       const response = await Promise.all([
-        fetch("https://source.unsplash.com/featured/?house"),
-        fetch("https://source.unsplash.com/featured/?Apartment"),
-        fetch("https://source.unsplash.com/featured/?house"),
-        fetch("https://source.unsplash.com/featured/?Apartment"),
-      ]);
+        fetch("https://picsum.photos/800/600?random=1"),
+        fetch("https://picsum.photos/800/600?random=2"),
+        fetch("https://picsum.photos/800/600?random=3"),
+        fetch("https://picsum.photos/800/600?random=4"),
+    ]);
+    
 
       const imageUrls = await Promise.all(response.map((res) => res.url));
       setNatureImages(imageUrls);

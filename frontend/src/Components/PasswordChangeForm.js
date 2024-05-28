@@ -6,12 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 function PasswordChangeForm() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        token: 0,
+        token: '',
         password: '',
         confirmPassword: ''
     });
 
-    // Function to handle input changes
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -20,27 +19,23 @@ function PasswordChangeForm() {
         });
     };
 
-    // Function to handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
         const { token, password, confirmPassword } = formData;
 
-        // Validate if passwords match
         if (password !== confirmPassword) {
             toast.error("Passwords don't match");
             return;
         }
 
-        // Prepare form data
         const requestData = {
-            token,
+            otp: parseInt(token),  // Convert the token to an integer
             password,
             confirmPassword
         };
 
         try {
-            // Send POST request to reset password
-            const response = await fetch("https://localhost:7218/api/User/ResetPassword", {
+            const response = await fetch("https://rentifyappservice.azurewebsites.net/api/User/ResetPassword", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -48,16 +43,15 @@ function PasswordChangeForm() {
                 body: JSON.stringify(requestData)
             });
 
-            // Check response status
             if (response.status === 200) {
                 toast.success("Your password has been changed successfully");
                 navigate("/login");
             } else if (response.status === 400) {
                 const errorMessage = await response.text();
                 toast.error(errorMessage);
+                console.log(response)
             }
         } catch (error) {
-            
             toast.error("Failed to change password. Please try again later.");
         }
     };
@@ -75,7 +69,6 @@ function PasswordChangeForm() {
                             Change your Password
                         </h1>
                         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-
                             <div>
                                 <label htmlFor="token" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                     Enter your OTP
@@ -117,13 +110,11 @@ function PasswordChangeForm() {
                                     onChange={handleInputChange}
                                 />
                             </div>
-
                             <button
                                 type="submit"
                                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                 Change Password
                             </button>
-
                         </form>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ function EmailVerification()  {
   // Handle form submission for verifying email
   const handleSubmit = async () => {
     try {
-      let response = await fetch(`https://localhost:7218/api/User/Verify?Otp=${token}`, {
+      let response = await fetch(`https://rentifyappservice.azurewebsites.net/api/User/Verify?Otp=${token}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

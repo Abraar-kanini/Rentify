@@ -65,7 +65,7 @@ const postSubmit = async (event) => {
     }
 
     try {
-        const response = await fetch('https://localhost:7218/api/Property', {
+        const response = await fetch('https://rentifyappservice.azurewebsites.net/api/Property', {
             method: 'POST',
             body: formData
         });

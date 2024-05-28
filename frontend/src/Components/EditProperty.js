@@ -62,7 +62,7 @@ function EditProperty() {
       }
   
       try {
-          const response = await fetch(`https://localhost:7218/api/Property/${propertyId}`, {
+          const response = await fetch(`https://rentifyappservice.azurewebsites.net/api/Property/${propertyId}`, {
               method: 'PUT',
               body: formData
           });

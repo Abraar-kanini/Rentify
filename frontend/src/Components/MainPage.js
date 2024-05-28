@@ -13,7 +13,7 @@ function MainPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch("https://localhost:7218/api/Property", {
+        let response = await fetch("https://rentifyappservice.azurewebsites.net/api/Property", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

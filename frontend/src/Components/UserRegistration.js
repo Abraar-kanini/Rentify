@@ -12,7 +12,7 @@ export default function UserRegister() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('https://localhost:7218/api/User/Register', {
+      const response = await fetch('https://rentifyappservice.azurewebsites.net/api/User/Register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
